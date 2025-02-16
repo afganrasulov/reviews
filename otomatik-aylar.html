@@ -3,25 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Otomatik Ay İsmi</title>
+  <title>Otomatik Ay İsmi - Oval Buton Tasarımı</title>
+  <style>
+    /* Oval butonun temel stili */
+    .oval-btn {
+      display: inline-block;
+      background-color: #4285f4; /* Mavi arka plan rengi */
+      color: #fff;              /* Yazı rengi */
+      padding: 20px 40px;       /* İç boşluklar */
+      border: none;             /* Kenarlık yok */
+      border-radius: 50px;      /* Oval görünüm */
+      cursor: pointer;          /* İmleci buton şekline dönüştür */
+      text-decoration: none;    /* Alt çizgi vs. kaldır */
+      font-family: sans-serif;  /* Yazı tipi */
+      text-align: center;       /* Metinleri ortala */
+      transition: background-color 0.3s ease; /* Hover efekti */
+    }
+
+    /* Fare üzerine gelince (hover) arka planı biraz koyulaştır */
+    .oval-btn:hover {
+      background-color: #3367d6;
+    }
+
+    /* Birinci satır: Büyük ve kalın */
+    .oval-btn h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* İkinci satır: Küçük açıklama metni */
+    .oval-btn p {
+      margin: 0 0;
+      font-size: 14px;
+    }
+
+    /* 17px boyutlu metin (Eğitimi keşfet) için ayrı sınıf */
+    .ek-17 {
+      font-size: 17px;
+    }
+  </style>
 </head>
 <body>
-  <div id="otomatikAy">
+  <!-- Mavi oval buton içinde dört satır: -->
+  <button class="oval-btn">
     <p id="ayIsmi"></p>
-  </div>
+  </button>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Türkçe ay isimleri dizisi
-      const aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+      // Türkçe ay isimleri
+      const aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+                     "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
       
       // Bugünün tarihi
       const bugun = new Date();
       
-      // Ayı al (0'dan 11'e kadar)
+      // Ay indeksi (0-11)
       const ayIndex = bugun.getMonth();
       
-      // DOM'a ay ismini ekle: örneğin "Şubat ayı için geçerlidir"
-      document.getElementById("ayIsmi").textContent = aylar[ayIndex] + " ayı için geçerlidir";
+      // Dinamik ay ismini ekleme (örnek: "Şubat ayı için geçerlidir")
+      document.getElementById("ayIsmi").textContent =
+        aylar[ayIndex] + " ayı için geçerlidir";
     });
   </script>
 </body>
