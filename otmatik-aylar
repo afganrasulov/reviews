@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otomatik Ay İsmi</title>
+</head>
+<body>
+  <p id="ayIsmi"></p>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Türkçe ay isimleri dizisi
+      const aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+      
+      // Bugünün tarihi
+      const bugun = new Date();
+      
+      // Ayı al (0'dan 11'e kadar)
+      const ayIndex = bugun.getMonth();
+      
+      // DOM'a ay ismini ekle
+      document.getElementById("ayIsmi").textContent = aylar[ayIndex];
+    });
+  </script>
+</body>
+</html>
