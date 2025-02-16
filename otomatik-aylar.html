@@ -6,8 +6,9 @@
   <title>Otomatik Ay İsmi</title>
 </head>
 <body>
-  <p id="ayIsmi"></p>
-
+  <div id="otomatikAy">
+    <p id="ayIsmi"></p>
+  </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Türkçe ay isimleri dizisi
@@ -19,8 +20,8 @@
       // Ayı al (0'dan 11'e kadar)
       const ayIndex = bugun.getMonth();
       
-      // DOM'a ay ismini ekle
-      document.getElementById("ayIsmi").textContent = aylar[ayIndex];
+      // DOM'a ay ismini ekle: örneğin "Şubat ayı için geçerlidir"
+      document.getElementById("ayIsmi").textContent = aylar[ayIndex] + " ayı için geçerlidir";
     });
   </script>
 </body>
